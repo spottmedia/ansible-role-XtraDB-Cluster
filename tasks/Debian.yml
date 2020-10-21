@@ -14,5 +14,5 @@
 - name: update cache
   apt:
     update_cache: yes
-  changed_when: false
+  when: percona_package_check_deb.changed == 1
 ...
