@@ -15,4 +15,8 @@
   apt:
     update_cache: yes
   when: percona_package_check_deb.changed == 1
-...
+
+- name: Setup percona cluster
+  shell: percona-release setup pxc80
+  when: percona_package_check_deb.changed == 1  
+  
